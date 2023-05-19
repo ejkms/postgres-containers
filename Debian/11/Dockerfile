@@ -48,7 +48,7 @@ RUN set -xe; \
 # TODO: Remove --no-deps once https://github.com/pypa/pip/issues/9644 is solved
 	pip3 install --no-deps -r requirements.txt; \
 	rm -rf /var/lib/apt/lists/*;
-
+COPY Monitel.ObjectDb.Pgsql.so /usr/lib/postgresql/11/lib/
 # Change the uid of postgres to 26
 RUN usermod -u 26 postgres
 USER 26
